@@ -58,3 +58,15 @@ with sq.connect('avito_data.db') as con:
                 con,
                 if_exists='fail' #create. Replace - overwrite. Append - insert 
                )
+#for check 
+with sq.connect('avito_data.db') as con:
+  df_sql_read = pd.read_sql("""select * from avito_0""",con)
+
+#index 
+with sq.connect('avito_data.db') as con:
+    df_sql.to_sql('avito_0',
+                con,
+                if_exists='replace',
+                index=True,#add index,
+                index_label='index_rows')
+               )
