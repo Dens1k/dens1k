@@ -58,7 +58,7 @@ df_data.rename({'col_1' : 'col_11'}
               , axis = 1) #coordinate X, Y 
 
 df_data.rename(columns={str.upper,#can use foo 
-              axis = 0,
+              axis = 0,#1 - horizontal, 0 - vertical 
               inplace = True)#can change data in DF 
 
 df_nan.index.hasnans #have df empty 
