@@ -12,7 +12,7 @@ df_columns = pd.DataFrame([[1,2,3],
 
 #multiIndex can be for index and columns 
 
-#creating multiIndex method "from projuct" 
+#creating multiIndex method "from product" 
 level_0 = ['row_1', 'row_2']
 level_1 = [1, 2, 3]
 
@@ -33,3 +33,5 @@ df.index.levels #read elements in multiIndex
 df.index = name_new_index #change value index 
 df.index.set_levels([[1,2,3],['q','w','e','r','t']]) #change index 
 df.index.set_levels(['q','w','e','r','t'], level = 0) #change only on level = 0
+df.reset_index() #can read multiIndex look like DF 
+df.droplevel([level = 1]) #(['lvl1', 'lvl2'])
